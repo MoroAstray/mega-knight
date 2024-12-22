@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjeb6ix1xxuvv"]
+
+[ext_resource type="PackedScene" uid="uid://ct638ne2u0y8f" path="res://levels/gems/gem.tscn" id="1_rjy57"]
+[ext_resource type="Texture2D" uid="uid://dm2c6bmyknk5f" path="res://assets/gems/emerald.png" id="2_n7j7w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epb2c"]
+resource_local_to_scene = true
+radius = 12.0416
+
+[node name="Emerald" instance=ExtResource("1_rjy57")]
+_gemType = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_n7j7w")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_epb2c")

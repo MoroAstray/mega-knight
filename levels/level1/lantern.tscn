@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://gppwi2w5ytx6"]
+
+[ext_resource type="Texture2D" uid="uid://cdvgekeqqr13t" path="res://assets/world/castle/parallaxBG-interior1.png" id="1_hpsnv"]
+
+[node name="Lantern" type="Sprite2D"]
+texture = ExtResource("1_hpsnv")
+region_enabled = true
+region_rect = Rect2(40.4931, 131.51, 62.2811, 63.8529)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://basbi4bipu35v"]
+
+[ext_resource type="Script" path="res://components/health/HealthBarComponent.cs" id="1_0ep7w"]
+[ext_resource type="FontFile" uid="uid://booqwa0bp3fir" path="res://ui/Silver.ttf" id="2_pxirv"]
+
+[sub_resource type="Theme" id="Theme_sp4ce"]
+default_font = ExtResource("2_pxirv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0ddg"]
+bg_color = Color(0.87, 0.1827, 0.1827, 1)
+
+[node name="HealthBarComponent" type="Control" node_paths=PackedStringArray("ProgressBar")]
+layout_mode = 3
+anchor_right = 0.058
+anchor_bottom = 0.008
+offset_right = -0.120003
+offset_bottom = 0.12
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ep7w")
+ProgressBar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 51.0
+offset_bottom = 4.0
+scale = Vector2(0.72, 0.72)
+theme = SubResource("Theme_sp4ce")
+theme_override_font_sizes/font_size = 11
+theme_override_styles/fill = SubResource("StyleBoxFlat_x0ddg")
+value = 100.0
+show_percentage = false

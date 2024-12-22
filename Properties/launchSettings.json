@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Mega Knight": {
+      "commandName": "Project"
+    },
+    "Run Godot": {
+      "commandName": "Executable",
+      "executablePath": "E:\\Programs\\Godot_v4.3-stable_mono_win64\\Godot_v4.3-stable_mono_win64.exe",
+      "workingDirectory": ".",
+      "nativeDebugging": true
+    }
+  }
+}

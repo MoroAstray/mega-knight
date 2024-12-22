@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b01v1gfeoqt2h"]
+
+[ext_resource type="Texture2D" uid="uid://c3n3ck7ikysrv" path="res://assets/world/grotto/animated/spritesheets/lava.png" id="1_4ud7l"]
+
+[node name="LavaTop" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.941176)
+texture = ExtResource("1_4ud7l")

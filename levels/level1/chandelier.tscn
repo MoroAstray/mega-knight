@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bri8mbl3isgop"]
+
+[ext_resource type="Texture2D" uid="uid://b8x5ktxsh3lbj" path="res://assets/world/castle/parallaxBG-interior2.png" id="1_upgf4"]
+
+[node name="Chandelier" type="Sprite2D"]
+texture = ExtResource("1_upgf4")
+region_enabled = true
+region_rect = Rect2(132.953, -0.105814, 59.2496, 228.688)

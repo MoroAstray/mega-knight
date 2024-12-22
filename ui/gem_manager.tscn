@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0q7x85173koy"]
+
+[ext_resource type="Texture2D" uid="uid://del0eqh82jad" path="res://assets/gems/ruby_outline.png" id="1_31kqu"]
+[ext_resource type="Texture2D" uid="uid://d267han1lfipo" path="res://assets/gems/sapphire_outline.png" id="1_crf1r"]
+[ext_resource type="Script" path="res://ui/GemManager.cs" id="1_g3ood"]
+[ext_resource type="Texture2D" uid="uid://dl78em6e3srnh" path="res://assets/gems/emerald_outline.png" id="3_ht83v"]
+[ext_resource type="Texture2D" uid="uid://c5n07fbp4pqjj" path="res://assets/gems/diamond_outline.png" id="4_0v4kc"]
+[ext_resource type="Texture2D" uid="uid://dj1cqma2hnoku" path="res://assets/gems/ruby.png" id="5_i2eip"]
+[ext_resource type="Texture2D" uid="uid://d2glqpd4pg7jr" path="res://assets/gems/sapphire.png" id="6_yuds8"]
+[ext_resource type="Texture2D" uid="uid://dm2c6bmyknk5f" path="res://assets/gems/emerald.png" id="7_wgsse"]
+[ext_resource type="Texture2D" uid="uid://pgo6ml14iv57" path="res://assets/gems/diamond.png" id="8_t3e50"]
+
+[node name="GemManager" type="Control" node_paths=PackedStringArray("Ruby", "Sapphire", "Emerald", "Diamond")]
+layout_mode = 3
+anchor_right = 0.209
+anchor_bottom = 0.092
+offset_right = 0.23999
+offset_bottom = -0.120003
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g3ood")
+Ruby = NodePath("Ruby")
+Sapphire = NodePath("Sapphire")
+Emerald = NodePath("Emerald")
+Diamond = NodePath("Diamond")
+
+[node name="RubyOutline" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("1_31kqu")
+
+[node name="SapphireOutline" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 32.0
+offset_right = 64.0
+offset_bottom = 32.0
+texture = ExtResource("1_crf1r")
+
+[node name="EmeraldOutline" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 64.0
+offset_right = 96.0
+offset_bottom = 32.0
+texture = ExtResource("3_ht83v")
+
+[node name="DiamondOutline" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 96.0
+offset_right = 128.0
+offset_bottom = 32.0
+texture = ExtResource("4_0v4kc")
+
+[node name="Ruby" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("5_i2eip")
+
+[node name="Sapphire" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 32.0
+offset_right = 64.0
+offset_bottom = 32.0
+texture = ExtResource("6_yuds8")
+
+[node name="Emerald" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 64.0
+offset_right = 96.0
+offset_bottom = 32.0
+texture = ExtResource("7_wgsse")
+
+[node name="Diamond" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 96.0
+offset_right = 128.0
+offset_bottom = 32.0
+texture = ExtResource("8_t3e50")

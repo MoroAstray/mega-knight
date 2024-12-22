@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3hhok8o1wy4j"]
+
+[ext_resource type="Script" path="res://ui/EndMenu.cs" id="1_bumqo"]
+[ext_resource type="FontFile" uid="uid://booqwa0bp3fir" path="res://ui/Silver.ttf" id="2_lcuwc"]
+
+[sub_resource type="Theme" id="Theme_4c4wb"]
+default_font = ExtResource("2_lcuwc")
+
+[sub_resource type="Theme" id="Theme_q7ncb"]
+default_font = ExtResource("2_lcuwc")
+
+[node name="EndMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bumqo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.48, 0.48, 0.48, 0.498039)
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -95.0
+offset_right = 115.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_4c4wb")
+theme_override_font_sizes/font_size = 18
+text = "Quit"
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -96.0
+offset_right = -22.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_4c4wb")
+theme_override_font_sizes/font_size = 18
+text = "Restart
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -29.0
+offset_right = 69.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_q7ncb")
+theme_override_font_sizes/font_size = 51
+text = "You died!"
+
+[connection signal="pressed" from="QuitButton" to="." method="OnQuitPressed"]
+[connection signal="pressed" from="RestartButton" to="." method="OnRestartPressed"]

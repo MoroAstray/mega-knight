@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxna6fpfm3ori"]
+
+[ext_resource type="Script" path="res://enemies/boss/Fireball.cs" id="1_wg7hq"]
+[ext_resource type="Texture2D" uid="uid://drhfvm3m84oln" path="res://assets/world/grotto/animated/spritesheets/fire-ball.png" id="2_3xawd"]
+[ext_resource type="PackedScene" uid="uid://dxv3vddvfdfpy" path="res://components/hitbox/hitbox_component.tscn" id="3_xgoed"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdq0x"]
+atlas = ExtResource("2_3xawd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu2ue"]
+atlas = ExtResource("2_3xawd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu1hv"]
+atlas = ExtResource("2_3xawd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i1342"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdq0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu2ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu1hv")
+}],
+"loop": true,
+"name": &"fireball0",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q80ti"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dp7v6"]
+radius = 5.0
+height = 12.0
+
+[node name="Fireball" type="Area2D"]
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_wg7hq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i1342")
+animation = &"fireball0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_q80ti")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_xgoed")]
+collision_layer = 0
+collision_mask = 4
+Damage = 5
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_dp7v6")
+
+[node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="StartTimer" to="." method="OnStartTimerTimeout"]
+[connection signal="timeout" from="QueueFreeTimer" to="." method="OnQueueFreeTimerTimeout"]
+
+[editable path="HitboxComponent"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://hwvmcp8le6pe"]
+
+[ext_resource type="Texture2D" uid="uid://b8x5ktxsh3lbj" path="res://assets/world/castle/parallaxBG-interior2.png" id="1_gxiyw"]
+
+[node name="Pillar" type="Sprite2D"]
+texture = ExtResource("1_gxiyw")
+region_enabled = true
+region_rect = Rect2(22.8459, 0, 35.4066, 320)

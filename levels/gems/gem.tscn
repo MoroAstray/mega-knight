@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct638ne2u0y8f"]
+
+[ext_resource type="Script" path="res://levels/gems/Gem.cs" id="1_homrw"]
+[ext_resource type="AudioStream" uid="uid://c8ucjsdqj7ji8" path="res://assets/audio/gem-pickup.wav" id="3_xb7we"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_233e8"]
+radius = 12.0416
+
+[node name="Gem" type="Area2D" node_paths=PackedStringArray("PickUpSFX")]
+position = Vector2(0, 0.245)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_homrw")
+PickUpSFX = NodePath("PickupSFX")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+region_rect = Rect2(32, 32, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_233e8")
+
+[node name="PickupSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xb7we")
+volume_db = -15.0
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bw7geab480dqa"
+path="res://.godot/imported/Corona de Siete Azahares.mp3-81a7bf8d43c9be1d62bdee6fc3475f2a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Corona de Siete Azahares.mp3"
+dest_files=["res://.godot/imported/Corona de Siete Azahares.mp3-81a7bf8d43c9be1d62bdee6fc3475f2a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

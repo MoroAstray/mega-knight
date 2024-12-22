@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpo4apnnxehuy"]
+
+[ext_resource type="Script" path="res://levels/GameManager.cs" id="1_85mjh"]
+[ext_resource type="PackedScene" uid="uid://br1lqcvyst0fe" path="res://ui/title_screen.tscn" id="2_262ty"]
+[ext_resource type="PackedScene" uid="uid://c8ldy1wa4l50b" path="res://ui/pause_menu.tscn" id="2_lfksw"]
+[ext_resource type="PackedScene" uid="uid://ct63xa6pedq6r" path="res://ui/coin_manager.tscn" id="3_xbkew"]
+[ext_resource type="PackedScene" uid="uid://c3hhok8o1wy4j" path="res://ui/end_menu.tscn" id="4_jjdol"]
+[ext_resource type="PackedScene" uid="uid://big6jf0rokbvh" path="res://ui/level_selection.tscn" id="5_o50fx"]
+[ext_resource type="PackedScene" uid="uid://d0q7x85173koy" path="res://ui/gem_manager.tscn" id="7_hl8gb"]
+[ext_resource type="PackedScene" uid="uid://kip0xh0pwdj8" path="res://ui/player_health_bar.tscn" id="8_fvagt"]
+[ext_resource type="AudioStream" uid="uid://cxeep8gaoufdh" path="res://assets/audio/exit_sfx.mp3" id="8_hulx7"]
+[ext_resource type="AudioStream" uid="uid://na0l1ufswr0o" path="res://assets/audio/Brandish The Dark Revenant OST  Shop.mp3" id="9_n7au7"]
+
+[node name="GameManager" type="Node2D" node_paths=PackedStringArray("PauseMenu", "EndMenu", "CoinManager", "LevelSelection", "TitleScreen", "GemManager", "HealthBar", "BackgroundMusic")]
+script = ExtResource("1_85mjh")
+PauseMenu = NodePath("CanvasLayer/PauseMenu")
+EndMenu = NodePath("CanvasLayer/EndMenu")
+CoinManager = NodePath("CanvasLayer/CoinManager")
+LevelSelection = NodePath("CanvasLayer/LevelSelection")
+TitleScreen = NodePath("CanvasLayer/TitleScreen")
+GemManager = NodePath("CanvasLayer/GemManager")
+HealthBar = NodePath("CanvasLayer/PlayerHealthBar")
+BackgroundMusic = NodePath("BackgroundMusic")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleScreen" parent="CanvasLayer" instance=ExtResource("2_262ty")]
+
+[node name="LevelSelection" parent="CanvasLayer" instance=ExtResource("5_o50fx")]
+visible = false
+
+[node name="CoinManager" parent="CanvasLayer" instance=ExtResource("3_xbkew")]
+visible = false
+anchor_left = 0.012
+anchor_top = 0.183
+anchor_right = 0.073
+anchor_bottom = 0.264
+offset_left = -0.68
+offset_top = 0.119995
+offset_right = 2.27999
+offset_bottom = -0.0400009
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="EndMenu" parent="CanvasLayer" instance=ExtResource("4_jjdol")]
+visible = false
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_lfksw")]
+visible = false
+
+[node name="GemManager" parent="CanvasLayer" instance=ExtResource("7_hl8gb")]
+visible = false
+anchor_left = 0.008
+anchor_top = 0.089
+anchor_right = 0.217
+anchor_bottom = 0.181
+offset_left = -0.12
+offset_top = 0.959999
+offset_right = -0.119995
+offset_bottom = 0.959991
+
+[node name="PlayerHealthBar" parent="CanvasLayer" instance=ExtResource("8_fvagt")]
+visible = false
+anchor_top = 0.039
+anchor_right = 0.358
+anchor_bottom = 0.094
+offset_left = 9.0
+offset_top = -0.04
+offset_right = -0.12001
+offset_bottom = 0.16
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("9_n7au7")
+volume_db = -20.0
+autoplay = true
+parameters/looping = true
+
+[node name="VictorySFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hulx7")
+volume_db = -20.0
